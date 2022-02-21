@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:Module:magento_email:etc/email_templates.xsd">
+    <template id="Mastering_SampleModule_Transaction_Email_customer_logged_in_email_template"
+    label="Custmoer Logged In" file="customer_logged_in.html"
+    module="Mastering_SampleModule_TransactionEmail"
+    area="frontend" />
+</config>

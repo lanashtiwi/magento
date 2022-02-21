@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+  <type name="Magento\Framework\Console\CommandList">
+  <arguments>
+  <argument name="commands" xsi:type="array">
+  <item name="masteringAddItem" xsi:type="object">Mastering\SampleModule\Console\Command\AddItem </item>
+  </argument>
+  </arguments>
+  </type>
+<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+<arguments>
+<argument name="collections" xsi:type="array">
+<item name="mastering_items_grid_data_source" xsi:type="string">Mastering\SampleModule\Model\ResourceModule\Item\Grid\Collection</item>
+</argument>
+</arguments> 
+</type>
+
+<type name="Mastering\SampleModule\Model\ResourceModule\Item\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mastering_sample_item</argument>
+            <argument name="eventPrefix" xsi:type="string">mastering_items_grid_data_source</argument>
+            <argument name="eventObject" xsi:type="string">mastering_items_grid</argument>
+            <argument name="resourceModel" xsi:type="string">Mastering\SampleModule\Model\ResourceModule\Item</argument>
+        </arguments>
+    </type>
+
+<virtualType name="Magento\Sales\Model\ResourceModule\Order\Grid">
+ <arguments>
+            <argument name="columns" xsi:type="array">
+            <item name="base_tax_amount" xsi:type="string">sales_order.base_tax_amount</item>
+            </argument>
+          
+        </arguments>
+</virtualType>
+
+
+<virtualType name="MasteringLogger" type="Magento\Framework\Logger\Monolog">
+ <arguments>
+            <argument name="name" xsi:type="string">main</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Magento\Framework\Logger\Handler\System</item>
+                <item name="debug" xsi:type="object">Mastering\SampleModule\Model\DebugHandler</item>
+            </argument>   
+        </arguments>
+</virtualType>
+
+<type name="Mastering\SampleModule\Observer\Logger">
+ <arguments>
+<argument name="logger" xsi:type="object">Mastering_Logger</argument>
+ </arguments>
+</type>
+</config>

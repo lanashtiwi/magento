@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+   <acl>
+   <resources>
+   <resource id="Magento_Backend::admin">
+   <resource id="Mastering_SampleModule::mastering" title="Mastering" translate="title" sortOrder="900">
+     <resource id="Mastering_SampleModule::mastering_update" title="Update" translate="title" sortOrder="30" />
+	  <resource id="Mastering_SampleModule::mastering_read" title="Read" translate="title" sortOrder="20" />
+	  <resource id="Mastering_SampleModule::mastering_create" title="Read" translate="title" sortOrder="20" />
+    <resource id="Magento_Catalog::catalog_products" title="Read" translate="title" sortOrder="20" />
+     </resource>
+   </resource>
+   </resources>
+   </acl>
+</config>
