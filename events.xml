@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Events/etc/events.xsd">
+    <event name ="mastering_sample_item_after_save">
+    <observer name="mastering_logger" instance="Mastering\SampleModule\Observer\Logger"/>
+    </event>
+
+      <event name ="mastering_sample_item_before_save">
+    <observer name="mastering_logger" instance="Mastering\SampleModule\Observer\Logger"/>
+    </event>
+
+
+    <event name="controller_action_catalog_product_save_entity_after">
+        <observer name="products_update" instance="Mastering\SampleModule\Observer\ProductsUpdate" />
+    </event>
+
+  <event name="catalog_product_save_before">
+        <observer name="products_after_update" instance="Mastering\SampleModule\Observer\ProductsUpdate" />
+    </event>
+
+</config>
